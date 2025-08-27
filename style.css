@@ -24,13 +24,21 @@ body {
   margin: 1rem 0;
 }
 
-.nav-bar-element-0:hover,
-.nav-bar-element-1:hover,
-.nav-bar-element-2:hover {
-  color: #874fff;
-  transition: all 0.2s ease-in-out;
-  transform: scale(0.97); /* Pressed effect */
+.nav-bar a {
+  text-decoration: none;
+  color: #ff9e42;
+  font-size: 100%;
+  font-style: italic;
+  font-weight: bold;
   cursor: pointer;
+  transition:
+    color 0.5s ease,
+    transform 0.8s ease;
+}
+
+.nav-bar a:hover {
+  color: #874fff;
+  transform: translateY(-2px) scale(1.1);
 }
 
 .footer-class {

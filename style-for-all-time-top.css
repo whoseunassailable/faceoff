@@ -1,0 +1,220 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background: #eae1fe;
+}
+
+.main-page-heading {
+  margin: 16px 0;
+  text-align: center;
+  color: #874fff;
+  font-weight: 800;
+}
+
+/* container they move inside */
+.float-area {
+  position: relative;
+  width: 85%;
+  height: 80%;
+  margin: 24px auto;
+  border: 4px solid #ff9e42;
+  border-radius: 16px;
+  background: #efe7ff;
+  overflow: hidden;
+}
+
+/* base card */
+.float-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  position: absolute; /* <-- float within .float-area */
+  width: 220px;
+  height: 260px;
+  border-radius: 12px;
+  background: #d8fbf3;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+  will-change: transform; /* smoother animation */
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.float-card:hover {
+  transform: translateZ(0) scale(1.03);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+  animation-play-state: paused;
+}
+
+/* animations */
+@keyframes drift1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(60px, -30px);
+  }
+  50% {
+    transform: translate(20px, 50px);
+  }
+  75% {
+    transform: translate(-50px, 10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes drift2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(-40px, 40px);
+  }
+  45% {
+    transform: translate(30px, 80px);
+  }
+  70% {
+    transform: translate(70px, -20px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* starting spots + per-card animation */
+.c1 {
+  left: 6%;
+  top: 8%;
+  animation: drift1 14s ease-in-out infinite;
+}
+.c2 {
+  right: 8%;
+  top: 10%;
+  animation: drift2 16s ease-in-out infinite;
+}
+.c3 {
+  left: 38%;
+  top: 28%;
+  animation: drift2 18s ease-in-out infinite reverse;
+}
+.c4 {
+  left: 12%;
+  bottom: 8%;
+  animation: drift1 20s ease-in-out infinite reverse;
+}
+.c5 {
+  right: 12%;
+  bottom: 10%;
+  animation: drift2 22s ease-in-out infinite;
+}
+
+/* allow overlap (no collision) */
+.c1 {
+  z-index: 1;
+}
+.c2 {
+  z-index: 2;
+}
+.c3 {
+  z-index: 3;
+}
+.c4 {
+  z-index: 2;
+}
+.c5 {
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float-card {
+    animation: none;
+  }
+}
+/* clickable image area */
+.card-img-link {
+  display: block;
+  border-radius: 10px;
+  overflow: hidden; /* rounds image corners */
+}
+
+/* keep thumbnails tidy regardless of aspect ratio */
+.card-img {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* adjust as you like */
+  object-fit: cover;
+  display: block;
+  transition: transform 0.2s ease;
+}
+.card-img-link:hover .card-img {
+  transform: scale(1.03);
+}
+
+/* text styles */
+.card-title {
+  margin: 4px 0 0;
+  font:
+    700 18px/1.2 system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    sans-serif;
+  color: #111;
+}
+.card-author,
+.card-meta {
+  margin: 0;
+  font:
+    500 14px/1.4 system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    sans-serif;
+  color: #444;
+}
+
+/* button */
+.card-btn {
+  margin-top: auto; /* push to bottom of card */
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #874fff;
+  color: #fff;
+  text-decoration: none;
+  font:
+    600 14px/1 system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    sans-serif;
+  border: 2px solid #5a2ecc;
+  text-align: center;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+.card-btn:hover {
+  background: #7834ff;
+  transform: translateY(-2px);
+}
+.card-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* optional: make the whole card clickable instead of just the image/button */
+.float-card.card-linkable {
+  cursor: pointer;
+}
+.float-card.card-linkable:hover {
+  transform: translateY(-6px);
+} /* stacks with your drift */
