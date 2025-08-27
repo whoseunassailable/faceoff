@@ -24,13 +24,22 @@ body {
   margin: 1rem 0;
 }
 
+.nav-bar-element-0:hover,
+.nav-bar-element-1:hover,
+.nav-bar-element-2:hover {
+  color: #874fff;
+  transition: all 0.2s ease-in-out;
+  transform: scale(0.97); /* Pressed effect */
+  cursor: pointer;
+}
+
 .footer-class {
+  height: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   list-style: none;
   padding: 0;
-  margin: 2rem 0 0;
 }
 
 .nav-bar {
@@ -62,25 +71,26 @@ body {
 }
 
 .custom-button {
+  width: 25%;
   display: inline-block;
-  background-color: #8a4dff; /* Purple background */
-  color: white; /* White text */
-  border: 3px solid #5a2ecc; /* Darker purple border */
-  border-radius: 999px; /* Fully rounded pill shape */
-  padding: 12px 32px; /* Vertical and horizontal padding */
-  font-size: 16px; /* Text size */
-  cursor: pointer; /* Pointer cursor on hover */
+  background-color: #8a4dff;
+  color: white;
+  border: 3px solid #5a2ecc;
+  border-radius: 999px;
+  padding: 12px 32px;
+  font-size: 16px;
+  cursor: pointer;
   font-family: Arial, sans-serif;
   transition: all 0.2s ease-in-out;
   margin: 2% 0 0 0;
 }
 
 .custom-button:hover {
-  background-color: #7834ff; /* Slightly darker on hover */
+  background-color: #7834ff;
 }
 
 .custom-button:active {
-  transform: scale(0.97); /* Pressed effect */
+  transform: scale(0.97);
 }
 
 .empty-container {
@@ -130,7 +140,17 @@ body {
 }
 
 .hr-customized {
+  width: 100%;
   border: none;
   height: 4px;
   background-color: #ff9e42;
+}
+
+.element-1,
+.element-2,
+.element-3 {
+  border: 4px dashed #757575;
+  border-radius: 150px;
+  padding: 10px 20px 10px 20px;
+  margin: 8px;
 }
