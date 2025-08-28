@@ -9,12 +9,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   gap: 16px;
 }
 
 .main-page-heading {
   margin: 0;
+  font-size: 400%;
   color: #874fff;
   text-align: center;
 }
@@ -25,7 +26,9 @@ body {
   max-width: 90%;
   border: 4px dashed #757575;
   border-radius: 150px;
-  padding: 10px 20px;
+  padding: 10px 40px 10px 20px;
+  background: white url("search-icon.png") no-repeat right 12px center;
+  background-size: 20px;
 }
 
 table {

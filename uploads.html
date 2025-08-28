@@ -2,8 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Recent Uploads</title>
+    <link rel="stylesheet" href="uploads.css" />
   </head>
-  <body></body>
+  <body>
+    <h1 class="main-page-heading">Recent Uploads</h1>
+
+    <div class="filters-container">
+      <select id="category" class="categories-and-filters">
+        <option value="" disabled selected>Filter by Category</option>
+        <option value="illustration">Illustration</option>
+        <option value="3d">3D</option>
+        <option value="typography">Typography</option>
+      </select>
+
+      <select id="sort" class="categories-and-filters">
+        <option value="" disabled selected>Sort By Votes</option>
+        <option value="high-to-low">High to low</option>
+        <option value="low-to-high">Low to high</option>
+      </select>
+    </div>
+
+    <!-- Scrollable 3-column grid; JS will inject 6 cards -->
+    <div class="body-for-designs" id="designs-grid"></div>
+
+    <script src="uploads.js"></script>
+  </body>
 </html>

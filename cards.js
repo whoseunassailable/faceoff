@@ -66,7 +66,6 @@ function renderCards(list) {
       <h3 class="card-title">${item.title}</h3>
       <p class="card-author">@${item.author}</p>
       <p class="card-meta">Votes: ${formatVotes(item.votes)}</p>
-
       <a class="card-btn" href="${item.href}">View Design</a>
     `;
 

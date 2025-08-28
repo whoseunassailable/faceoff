@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="leaderboard.css" type="text/css" />
+    <link rel="stylesheet" href="leaderboard.css" />
   </head>
   <body>
     <h1 class="main-page-heading">Leaderboard</h1>
     <input type="text" class="search-bar" placeholder="Search designs..." />
-    <table>
+    <table id="leaderboard">
       <thead>
         <tr>
           <th>Rank</th>
@@ -19,14 +19,27 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th>1</th>
-          <th>Realism</th>
-          <th>Ray Neils</th>
-          <th>4,34,533</th>
-          <th>12/4/2025</th>
-        </tr>
+        <!-- JS will inject rows here -->
       </tbody>
     </table>
+
+    <script src="leaderboard_data.js"></script>
+    <script>
+      const tbody = document.querySelector("#leaderboard tbody");
+
+      leaderboardData.forEach((item) => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+          <td>${item.rank}</td>
+          <td>${item.name}</td>
+          <td>${item.creator}</td>
+          <td>${item.votes.toLocaleString()}</td>
+          <td>${item.date}</td>
+        `;
+
+        tbody.appendChild(row);
+      });
+    </script>
   </body>
 </html>
