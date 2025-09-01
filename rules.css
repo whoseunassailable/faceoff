@@ -1,0 +1,261 @@
+/* ============  Theme  ============ */
+:root {
+  --bg: #ffffff;
+  --text: #241c3a;
+  --muted: #6b6585;
+  --brand: #7a3ef0; /* purple */
+  --brand-600: #6b32e9;
+  --accent: #ff9800; /* orange */
+  --accent-200: #ffe1b3;
+  --card: #ffffff;
+  --border: #efe7ff;
+  --shadow:
+    0 10px 28px rgba(34, 12, 64, 0.08), 0 2px 6px rgba(34, 12, 64, 0.06);
+  --radius: 18px;
+  --maxw: 1100px;
+}
+
+/* ============  Base  ============ */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family:
+    Poppins,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Helvetica,
+    Arial;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 60% -10%, #fff8ef 10%, #ffffff 50%),
+    radial-gradient(1000px 500px at -10% -10%, #f2ecff 10%, #ffffff 50%);
+}
+a {
+  color: var(--brand);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding: 0 20px;
+}
+
+/* ============  Topbar / Nav  ============ */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.78);
+  border-bottom: 3px solid var(--accent-200);
+}
+.topnav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+.brand__logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--brand),
+    var(--accent),
+    var(--brand)
+  );
+  border: 2px solid #fff;
+  box-shadow: var(--shadow);
+}
+.brand__name {
+  color: var(--brand);
+}
+
+.navlinks {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.navlinks a {
+  color: var(--muted);
+  font-weight: 500;
+}
+.navlinks a[aria-current="page"] {
+  color: var(--brand);
+}
+
+/* ============  Hero  ============ */
+.hero {
+  text-align: center;
+  padding: 36px 0 8px;
+}
+.hero h1 {
+  font-size: clamp(1.6rem, 2.2vw + 1rem, 2.4rem);
+  line-height: 1.15;
+  margin: 0 0 6px;
+}
+.hero .sub {
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+.actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ============  Buttons  ============ */
+.btn {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 12px 16px;
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+  transition:
+    transform 0.08s ease,
+    box-shadow 0.2s ease,
+    background 0.2s;
+  display: inline-block;
+}
+.btn:focus-visible {
+  outline: 3px solid rgba(122, 62, 240, 0.35);
+  outline-offset: 2px;
+}
+.btn.primary {
+  background: var(--brand);
+  color: #fff;
+}
+.btn.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 32px rgba(122, 62, 240, 0.25);
+}
+.btn.ghost {
+  background: #fff;
+  color: var(--brand);
+  border: 2px solid var(--border);
+}
+.btn.ghost:hover {
+  transform: translateY(-1px);
+}
+
+/* ============  Cards / Sections  ============ */
+.card {
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 22px;
+  margin: 16px 0;
+  box-shadow: var(--shadow);
+}
+.card h2 {
+  margin: 0 0 8px;
+  font-size: clamp(1.1rem, 1vw + 0.9rem, 1.35rem);
+  position: relative;
+  padding-left: 14px;
+}
+.card h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 22px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, var(--accent), var(--brand));
+}
+.card ul {
+  margin: 0;
+  padding-left: 20px;
+}
+.card li {
+  margin: 8px 0;
+  color: var(--text);
+}
+
+/* Note / Tip */
+.tip {
+  margin-top: 10px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 2px dashed var(--accent-200);
+  background: #fff7ea;
+  color: #7a5a2a;
+}
+
+/* Inline nav after content */
+.inline-nav {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding: 10px 0 2px;
+  color: var(--muted);
+}
+.inline-nav .link {
+  color: var(--brand);
+}
+
+/* ============  Footer  ============ */
+.site-footer {
+  margin-top: 28px;
+  border-top: 3px solid var(--accent-200);
+  background: linear-gradient(180deg, #fff, #fff7ea);
+}
+.footerwrap {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(12, 1fr);
+  padding: 22px 0;
+}
+.footercol {
+  grid-column: span 12;
+}
+.footercol h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  color: var(--brand);
+}
+.footlinks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footlinks li {
+  margin: 8px 0;
+}
+.copyright {
+  color: var(--muted);
+  margin: 0;
+}
+
+@media (min-width: 780px) {
+  .footercol {
+    grid-column: span 4;
+  }
+}

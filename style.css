@@ -162,3 +162,16 @@ body {
   padding: 10px 20px 10px 20px;
   margin: 8px;
 }
+
+.element-1 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.element-1:hover,
+.element-2:hover,
+.element-3:hover {
+  font-size: large;
+  background-color: #874fff;
+  color: white;
+}
