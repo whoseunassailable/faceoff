@@ -1,0 +1,87 @@
+:root {
+  --ink: #000;
+  --gold: #d4af37;
+  --cta: #8a4dff;
+  --cta-dark: #5a2ecc;
+}
+
+html,
+body {
+  height: 100%;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  /* NOTE: path changed because this file is in /css */
+  background: url("../assets/img/renaissance-bg.png") center top / cover
+    no-repeat fixed;
+  color: var(--ink);
+}
+
+/* Frame / container used on pages that want the ornate frame */
+.empty-container {
+  position: relative;
+  width: 90%;
+  margin: 40px auto;
+  border: 4px solid var(--gold);
+  border-top: none;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 80px);
+
+  /* embossed look */
+  box-shadow:
+    inset 0 0 6px rgba(255, 255, 255, 0.3),
+    inset 0 0 12px rgba(0, 0, 0, 0.25),
+    0 8px 24px rgba(0, 0, 0, 0.35);
+  background-clip: padding-box;
+}
+
+.empty-container .topline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 0;
+}
+.empty-container .topline::before,
+.empty-container .topline::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  height: 0;
+  border-top: 4px solid var(--gold);
+  width: 25%;
+}
+.empty-container .topline::before {
+  left: -4px;
+}
+.empty-container .topline::after {
+  right: -4px;
+}
+
+.topcurve {
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  height: 34px;
+  border-bottom: 4px solid #fff;
+  border-radius: 50%/100px;
+  pointer-events: none;
+}
+
+.hr-customized {
+  width: 100%;
+  border: none;
+  height: 4px;
+  background-color: var(--gold);
+}
+
+/* Make content sit above any overlays you add later */
+.empty-container > * {
+  position: relative;
+  z-index: 1;
+}

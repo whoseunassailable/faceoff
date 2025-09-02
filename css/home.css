@@ -1,0 +1,19 @@
+.body-for-voting {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+}
+.button-wrapper {
+  width: 100%;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* Optional: give home buttons a consistent width without touching others */
+.button-wrapper .btn,
+.button-wrapper .custom-button {
+  width: min(90%, 360px);
+}
