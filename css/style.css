@@ -5,7 +5,7 @@ body {
 
 body {
   margin: 0;
-  background: url("./assets/img/renaissance-bg.png") center top / cover
+  background: url("../assets/img/renaissance-bg.png") center top / cover
     no-repeat fixed;
 }
 
@@ -80,20 +80,6 @@ body {
   width: 1em;
   height: 1em;
   fill: currentColor; /* matches text & hover color */
-}
-
-.footer-class {
-  height: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  list-style: none;
-  padding: 0;
-}
-
-.footer-class li {
-  display: inline-block;
-  text-align: center;
 }
 
 .button-wrapper {
@@ -205,27 +191,14 @@ body {
   background-color: #d4af37;
 }
 
-.element-1,
-.element-2,
-.element-3 {
-  border: 4px dashed #000000;
-  border-radius: 150px;
-  padding: 10px 20px 10px 20px;
-  margin: 8px;
+footer {
+  margin: 0% 0% 0% 0%;
 }
 
-.element-1 a {
-  text-decoration: none;
-  color: inherit;
+.footer-wrap {
+  display: flex;
+  justify-content: space-around;
 }
-.element-2 a {
-  text-decoration: none;
-  color: inherit;
-}
-.element-1:hover,
-.element-2:hover,
-.element-3:hover {
-  font-size: large;
-  background-color: #874fff;
-  color: white;
+.panel h2 {
+  margin: 0% 0% 2.5% 0%;
 }

@@ -2,7 +2,7 @@
 :root {
   --bg: #ffffff;
   --text: #241c3a;
-  --muted: #6b6585;
+  --muted: #5c5676; /* slightly darker for contrast */
   --brand: #7a3ef0; /* purple */
   --brand-600: #6b32e9;
   --accent: #ff9800; /* orange */
@@ -47,6 +47,24 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Focus styles for all focusable anchors/buttons */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid rgba(122, 62, 240, 0.35);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 .container {
   max-width: var(--maxw);
   margin-inline: auto;
@@ -58,7 +76,8 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 50;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px); /* modern browsers */
+  -webkit-backdrop-filter: blur(8px); /* Safari */
   background: rgba(255, 255, 255, 0.78);
   border-bottom: 3px solid var(--accent-200);
 }
@@ -104,6 +123,8 @@ a:hover {
 }
 .navlinks a[aria-current="page"] {
   color: var(--brand);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* ============  Hero  ============ */
@@ -143,10 +164,6 @@ a:hover {
     background 0.2s;
   display: inline-block;
 }
-.btn:focus-visible {
-  outline: 3px solid rgba(122, 62, 240, 0.35);
-  outline-offset: 2px;
-}
 .btn.primary {
   background: var(--brand);
   color: #fff;
@@ -169,7 +186,7 @@ a:hover {
   background: var(--card);
   border: 2px solid var(--border);
   border-radius: var(--radius);
-  padding: 22px 22px;
+  padding: 22px;
   margin: 16px 0;
   box-shadow: var(--shadow);
 }
