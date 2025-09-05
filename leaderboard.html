@@ -3,27 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="leaderboard.css" />
+    <link rel="stylesheet" href="./css/base.css" type="text/css" />
+    <link rel="stylesheet" href="./css/leaderboard.css" />
   </head>
   <body>
-    <h1 class="main-page-heading">Leaderboard</h1>
-    <input type="text" class="search-bar" placeholder="Search designs..." />
-    <table id="leaderboard">
-      <thead>
-        <tr>
-          <th>Rank</th>
-          <th>Design Name</th>
-          <th>Creator</th>
-          <th>Votes</th>
-          <th>Date Added</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- JS will inject rows here -->
-      </tbody>
-    </table>
+    <div class="empty-container">
+      <div class="topline"></div>
+      <div class="topcurve"></div>
+      <h1 class="main-page-heading">Leaderboard</h1>
 
-    <script src="leaderboard_data.js"></script>
+      <div class="controls">
+        <input
+          id="search"
+          type="text"
+          class="search-bar"
+          placeholder="Search designs or creators…"
+        />
+      </div>
+      <div class="table-wrap">
+        <table id="leaderboard">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Design Name</th>
+              <th>Creator</th>
+              <th>Votes</th>
+              <th>Date Added</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <custom-footer></custom-footer>
+
+      <script src="../js/custom-footer.js"></script>
+      <script src="../js/leaderboard_data.js"></script>
+    </div>
     <script>
       const tbody = document.querySelector("#leaderboard tbody");
 

@@ -3,19 +3,6 @@ body {
   height: 100%;
 }
 
-body {
-  margin: 0;
-  background: url("../assets/img/renaissance-bg.png") center top / cover
-    no-repeat fixed;
-}
-
-.main-page-heading {
-  font-family: "Cinzel", serif;
-  margin: 0;
-  color: #000000;
-  text-align: center;
-}
-
 .nav-bar {
   display: flex;
   list-style: none;
@@ -62,7 +49,7 @@ body {
 }
 
 .nav-bar a:hover {
-  color: #874fff;
+  color: #6e3b2b;
   transform: translateY(-2px) scale(1.06);
 }
 
@@ -101,7 +88,7 @@ body {
   display: inline-block;
   background: linear-gradient(
     180deg,
-    #8a4dff,
+    #6e3b2b,
     #7834ff
   ); /* rich purple gradient */
   color: white;
@@ -119,7 +106,7 @@ body {
 }
 
 .custom-button:hover {
-  background: linear-gradient(180deg, #7834ff, #5a2ecc);
+  background: linear-gradient(180deg, #6e3b2b, #5a2ecc);
   box-shadow:
     0 8px 18px rgba(0, 0, 0, 0.3),
     0 0 6px 3px rgba(212, 175, 55, 0.6); /* stronger glow on hover */
@@ -133,98 +120,9 @@ body {
     0 0 3px 2px rgba(212, 175, 55, 0.5);
 }
 
-.empty-container {
-  position: relative;
-  width: 90%;
-  margin: 40px auto;
-  border: 4px solid #8b5e3c;
-  border-top: none;
-  display: flex;
-  flex-direction: column;
-  min-height: calc(100vh - 80px);
-
-  box-shadow:
-    inset 0 0 6px rgba(255, 255, 255, 0.3),
-    inset 0 0 12px rgba(0, 0, 0, 0.25),
-    0 8px 24px rgba(0, 0, 0, 0.35);
-  background-clip: padding-box;
-}
-
-.empty-container .topline {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 0;
-}
-
-.empty-container .topline::before,
-.empty-container .topline::after {
-  content: "";
-  position: absolute;
-  top: -4px;
-  height: 0;
-  border-top: 4px solid #8b5e3c;
-  width: 25%;
-}
-.empty-container .topline::before {
-  left: -4px;
-}
-.empty-container .topline::after {
-  right: -4px;
-}
-
-.topcurve {
-  position: absolute;
-  left: 25%;
-  right: 25%;
-  height: 34px;
-  border-bottom: 4px solid white;
-  border-radius: 50%/100px;
-  pointer-events: none;
-}
-
 .hr-customized {
   width: 100%;
   border: none;
   height: 4px;
   background-color: #8b5e3c;
-}
-
-footer {
-  margin: 0% 0% 0% 0%;
-}
-
-.footer-wrap {
-  display: flex;
-  justify-content: space-around;
-}
-
-.panel {
-  width: 20%; /* fixed width */
-  border-radius: 20px;
-  padding: 20px;
-  box-sizing: border-box; /* keeps padding inside width */
-  text-align: left;
-}
-
-.panel ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.panel h2 {
-  margin: 0% 0% 2.5% 0%;
-}
-
-.panel ul li {
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.panel ul li:hover {
-  color: #6e3b2b; /* renaissance gold */
-  text-shadow: 0 0 6px rgba(212, 175, 55, 0.6);
-  transform: scale(1.05);
 }
