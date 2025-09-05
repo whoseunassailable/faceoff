@@ -1,19 +1,9 @@
-body {
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-}
-
 .main-page-heading {
   font-family: "Cinzel", serif;
-  margin: 0;
+  margin-bottom: 2%;
   color: #000000;
   text-align: center;
 }
-
 .search-bar {
   display: flex;
   flex-direction: column;
@@ -23,6 +13,7 @@ body {
   border: 4px dashed #757575;
   border-radius: 150px;
   padding: 10px 40px 10px 20px;
+  margin-bottom: 2%;
   background: white url("search-icon.png") no-repeat right 12px center;
 }
 
@@ -63,4 +54,5 @@ tbody tr:hover {
   display: flex;
   justify-content: center;
   width: 100%;
+  margin-bottom: 5%;
 }
