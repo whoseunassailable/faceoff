@@ -85,7 +85,6 @@ footer {
 }
 
 .panel ul {
-  list-style: none;
   padding: 0;
   margin: 0;
 }
@@ -95,11 +94,17 @@ footer {
 }
 
 .panel ul li {
+  list-style: none;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.panel ul li:hover {
+.panel ul li a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.panel ul li a:hover {
   color: #6e3b2b; /* renaissance gold */
   text-shadow: 0 0 6px rgba(212, 175, 55, 0.6);
   transform: scale(1.05);

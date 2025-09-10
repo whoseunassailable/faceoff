@@ -1,278 +1,289 @@
-/* ============  Theme  ============ */
+/* ================================
+   Faceoff — Rules & Guidelines
+   Page-specific styles (rules.css)
+   Works on top of base.css
+   ================================ */
+
+/* ---------- Theme Tokens ---------- */
 :root {
-  --bg: #ffffff;
-  --text: #241c3a;
-  --muted: #5c5676; /* slightly darker for contrast */
-  --brand: #7a3ef0; /* purple */
-  --brand-600: #6b32e9;
-  --accent: #ff9800; /* orange */
-  --accent-200: #ffe1b3;
-  --card: #ffffff;
-  --border: #efe7ff;
-  --shadow:
-    0 10px 28px rgba(34, 12, 64, 0.08), 0 2px 6px rgba(34, 12, 64, 0.06);
-  --radius: 18px;
-  --maxw: 1100px;
+  --ink: #0f0f0f;
+  --muted-ink: #3a3a3a;
+  --gold: #8b5e3c; /* matches base.css border */
+  --cream: rgba(255, 252, 245, 0.85);
+  --paper: rgba(255, 255, 255, 0.9);
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  --ring: 0 0 0 3px rgba(139, 94, 60, 0.25);
 }
 
-/* ============  Base  ============ */
-* {
-  box-sizing: border-box;
+/* ---------- Base Typography ---------- */
+html {
+  scroll-behavior: smooth;
 }
-html,
+
 body {
-  height: 100%;
-}
-body {
-  margin: 0;
+  color: var(--ink);
   font-family:
-    Poppins,
-    ui-sans-serif,
+    "Poppins",
     system-ui,
     -apple-system,
     Segoe UI,
     Roboto,
-    Helvetica,
-    Arial;
-  color: var(--text);
-  background:
-    radial-gradient(1200px 600px at 60% -10%, #fff8ef 10%, #ffffff 50%),
-    radial-gradient(1000px 500px at -10% -10%, #f2ecff 10%, #ffffff 50%);
-}
-a {
-  color: var(--brand);
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji",
+    sans-serif;
+  line-height: 1.6;
 }
 
-/* Focus styles for all focusable anchors/buttons */
-a:focus-visible,
-button:focus-visible {
-  outline: 3px solid rgba(122, 62, 240, 0.35);
-  outline-offset: 2px;
-  border-radius: 8px;
+/* Make sure long headings don’t overflow on mobile */
+h1,
+h2 {
+  word-wrap: break-word;
 }
 
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+/* Main page heading already styled in base.css; add spacing here */
+.main-page-heading {
+  padding: 28px 16px 14px;
+  letter-spacing: 0.5px;
 }
 
-.container {
-  max-width: var(--maxw);
-  margin-inline: auto;
-  padding: 0 20px;
+/* ---------- Page Layout ---------- */
+#content.container {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px 18px 40px;
 }
 
-/* ============  Topbar / Nav  ============ */
-.topbar {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  backdrop-filter: blur(8px); /* modern browsers */
-  -webkit-backdrop-filter: blur(8px); /* Safari */
-  background: rgba(255, 255, 255, 0.78);
-  border-bottom: 3px solid var(--accent-200);
+/* Hero / subheader */
+.hero {
+  margin: 4px 0 20px;
 }
-.topnav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 14px 0;
+
+.hero .sub {
+  margin: 0;
+  font-size: 0.975rem;
+  color: var(--muted-ink);
 }
-.brand {
+
+.hero time {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* ---------- Cards ---------- */
+.card {
+  position: relative;
+  margin: 16px 0;
+  padding: 18px 18px 16px;
+  background: var(--paper);
+  border: 2px solid var(--gold);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(1.5px);
+}
+
+.card h2 {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-weight: 700;
-  letter-spacing: 0.3px;
-}
-.brand__logo {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: conic-gradient(
-    from 180deg at 50% 50%,
-    var(--brand),
-    var(--accent),
-    var(--brand)
-  );
-  border: 2px solid #fff;
-  box-shadow: var(--shadow);
-}
-.brand__name {
-  color: var(--brand);
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+  line-height: 1.25;
 }
 
-.navlinks {
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
+.card ul {
+  margin: 10px 0 0 0;
+  padding-left: 1.1rem; /* leave bullets visible */
 }
-.navlinks a {
-  color: var(--muted);
-  font-weight: 500;
+
+.card li {
+  margin: 6px 0;
 }
-.navlinks a[aria-current="page"] {
-  color: var(--brand);
+
+/* Helpful note banner inside Etiquette section */
+.tip {
+  margin-top: 12px;
+  padding: 12px 14px;
+  background: var(--cream);
+  border: 1px dashed var(--gold);
+  border-radius: 12px;
+  font-size: 0.95rem;
+}
+
+/* ---------- Inline navigation ---------- */
+.inline-nav {
+  margin: 22px 0 4px;
+  text-align: center;
+  font-size: 0.975rem;
+  color: var(--muted-ink);
+}
+
+.inline-nav .link {
+  display: inline-block;
+  padding: 4px 6px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: transform 160ms ease;
+}
+
+.inline-nav .link:hover {
+  transform: translateY(-1px);
   text-decoration: underline;
+  text-decoration-thickness: 2px;
   text-underline-offset: 3px;
 }
 
-/* ============  Hero  ============ */
-.hero {
-  text-align: center;
-  padding: 36px 0 8px;
-}
-.hero h1 {
-  font-size: clamp(1.6rem, 2.2vw + 1rem, 2.4rem);
-  line-height: 1.15;
-  margin: 0 0 6px;
-}
-.hero .sub {
-  color: var(--muted);
-  margin: 0 0 12px;
-}
-.actions {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
+.inline-nav .link:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
 }
 
-/* ============  Buttons  ============ */
-.btn {
-  appearance: none;
-  border: 0;
-  cursor: pointer;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  padding: 12px 16px;
-  border-radius: 999px;
-  box-shadow: var(--shadow);
-  transition:
-    transform 0.08s ease,
-    box-shadow 0.2s ease,
-    background 0.2s;
-  display: inline-block;
-}
-.btn.primary {
-  background: var(--brand);
-  color: #fff;
-}
-.btn.primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 14px 32px rgba(122, 62, 240, 0.25);
-}
-.btn.ghost {
-  background: #fff;
-  color: var(--brand);
-  border: 2px solid var(--border);
-}
-.btn.ghost:hover {
-  transform: translateY(-1px);
+/* ---------- A11y link behaviors across the page ---------- */
+a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
 }
 
-/* ============  Cards / Sections  ============ */
-.card {
-  background: var(--card);
-  border: 2px solid var(--border);
-  border-radius: var(--radius);
-  padding: 22px;
-  margin: 16px 0;
-  box-shadow: var(--shadow);
-}
-.card h2 {
-  margin: 0 0 8px;
-  font-size: clamp(1.1rem, 1vw + 0.9rem, 1.35rem);
-  position: relative;
-  padding-left: 14px;
-}
-.card h2::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 6px;
-  height: 22px;
-  border-radius: 4px;
-  background: linear-gradient(180deg, var(--accent), var(--brand));
-}
-.card ul {
-  margin: 0;
-  padding-left: 20px;
-}
-.card li {
-  margin: 8px 0;
-  color: var(--text);
+a:hover {
+  text-decoration-thickness: 2px;
 }
 
-/* Note / Tip */
-.tip {
-  margin-top: 10px;
-  padding: 12px 14px;
-  border-radius: 14px;
-  border: 2px dashed var(--accent-200);
-  background: #fff7ea;
-  color: #7a5a2a;
+a:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+  border-radius: 6px;
 }
 
-/* Inline nav after content */
-.inline-nav {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  padding: 10px 0 2px;
-  color: var(--muted);
-}
-.inline-nav .link {
-  color: var(--brand);
-}
-
-/* ============  Footer  ============ */
+/* ---------- Footer ---------- */
+/* Your HTML uses `.footerwrap`, while base.css defines `.footer-wrap`.
+   Style the class actually present in the HTML. */
 .site-footer {
-  margin-top: 28px;
-  border-top: 3px solid var(--accent-200);
-  background: linear-gradient(180deg, #fff, #fff7ea);
+  margin-top: auto; /* push footer to bottom inside .empty-container flex */
+  background: rgba(255, 255, 255, 0.8);
+  border-top: 3px solid var(--gold);
 }
-.footerwrap {
+
+.site-footer .container.footerwrap {
   display: grid;
-  gap: 18px;
-  grid-template-columns: repeat(12, 1fr);
-  padding: 22px 0;
+  grid-template-columns: 1.1fr 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+  padding: 20px 18px;
 }
-.footercol {
-  grid-column: span 12;
-}
+
 .footercol h3 {
   margin: 0 0 8px;
   font-size: 1rem;
-  color: var(--brand);
 }
+
 .footlinks {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+
 .footlinks li {
-  margin: 8px 0;
-}
-.copyright {
-  color: var(--muted);
-  margin: 0;
+  margin: 6px 0;
 }
 
-@media (min-width: 780px) {
-  .footercol {
-    grid-column: span 4;
+.footlinks a[aria-current="page"] {
+  font-weight: 600;
+  text-decoration-thickness: 2px;
+}
+
+.copyright {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted-ink);
+}
+
+/* ---------- Utilities ---------- */
+[aria-labelledby] {
+  scroll-margin-top: 84px; /* comfortable anchor scroll offset */
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  #content.container {
+    max-width: 840px;
+  }
+}
+
+@media (max-width: 768px) {
+  .empty-container {
+    width: 94%;
+  }
+
+  #content.container {
+    padding: 18px 14px 28px;
+  }
+
+  .card {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .site-footer .container.footerwrap {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+}
+
+@media (max-width: 520px) {
+  .main-page-heading {
+    padding: 22px 10px 10px;
+    font-size: 1.6rem;
+  }
+
+  .hero .sub {
+    font-size: 0.93rem;
+  }
+
+  .card h2 {
+    font-size: 1rem;
+  }
+
+  .site-footer .container.footerwrap {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Print (clean, ink-friendly) ---------- */
+@media print {
+  body {
+    background: #fff !important;
+  }
+
+  .empty-container {
+    border: none !important;
+    box-shadow: none !important;
+    width: 100%;
+    margin: 0;
+  }
+
+  .topline,
+  .topcurve,
+  .inline-nav,
+  .site-footer {
+    display: none !important;
+  }
+
+  .card {
+    page-break-inside: avoid;
+    border-color: #ccc;
+    background: #fff;
+    box-shadow: none;
+  }
+
+  a {
+    text-decoration: none;
   }
 }

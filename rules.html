@@ -16,157 +16,143 @@
       rel="stylesheet"
     />
     <!-- Site CSS -->
+    <link rel="stylesheet" href="./css/base.css" />
     <link rel="stylesheet" href="./css/rules.css" />
   </head>
   <body>
-    <header class="topbar" role="banner">
-      <div class="container topnav" role="navigation" aria-label="Primary">
-        <a class="brand" href="/">
-          <span class="brand__logo" aria-hidden="true"></span>
-          <span class="brand__name">Faceoff</span>
-        </a>
-        <nav class="navlinks">
-          <a href="/">Home</a>
-          <a href="/leaderboard">Leaderboard</a>
-          <a href="/uploads">Uploads</a>
-          <a aria-current="page" href="/rules">Rules &amp; Guidelines</a>
+    <div class="empty-container">
+      <div class="topline"></div>
+      <div class="topcurve"></div>
+      <h1 class="main-page-heading"><b>Rules &amp; Guidelines</b></h1>
+      <main id="content" class="container">
+        <section class="hero" aria-labelledby="page-title">
+          <p class="sub">
+            Please read this before uploading or voting. Last updated:
+            <time datetime="2025-09-01">Sept 1, 2025</time>.
+          </p>
+        </section>
+
+        <section class="card" aria-labelledby="uploading">
+          <h2 id="uploading">✅ Uploading Designs</h2>
+          <ul>
+            <li>Upload only <strong>your own original work</strong>.</li>
+            <li>Accepted formats: <strong>JPG, PNG, SVG</strong>.</li>
+            <li>
+              Content must be appropriate for all audiences (no nudity, hate, or
+              violence).
+            </li>
+            <li>
+              Keep files under the posted size limit and follow category/theme
+              rules.
+            </li>
+          </ul>
+        </section>
+
+        <section class="card" aria-labelledby="not-allowed">
+          <h2 id="not-allowed">🚫 Not Allowed</h2>
+          <ul>
+            <li>Plagiarism, traced, or heavily copied designs.</li>
+            <li>Offensive, discriminatory, or harmful content.</li>
+            <li>Spam uploads or repeated near-duplicates.</li>
+            <li>
+              Watermarks, ads, or promotional banners (unless explicitly
+              permitted).
+            </li>
+          </ul>
+        </section>
+
+        <section class="card" aria-labelledby="voting">
+          <h2 id="voting">📊 Voting Rules</h2>
+          <ul>
+            <li>Vote fairly—pick the design you genuinely prefer.</li>
+            <li>No bots, fake accounts, or vote manipulation.</li>
+            <li>
+              Leaderboards reflect community votes and moderation decisions.
+            </li>
+          </ul>
+        </section>
+
+        <section class="card" aria-labelledby="rights">
+          <h2 id="rights">⚖️ Rights &amp; Responsibility</h2>
+          <ul>
+            <li>You retain ownership of your design.</li>
+            <li>
+              By uploading, you grant Faceoff a non-exclusive license to
+              <strong>display</strong> your design on the site and socials for
+              promotion.
+            </li>
+            <li>
+              Reported content may be reviewed and removed if it breaks rules.
+            </li>
+            <li>
+              Repeat violations may result in temporary or permanent account
+              restrictions.
+            </li>
+          </ul>
+        </section>
+
+        <section class="card" aria-labelledby="etiquette">
+          <h2 id="etiquette">🙌 Community Etiquette</h2>
+          <ul>
+            <li>Be respectful and constructive toward other creators.</li>
+            <li>Celebrate originality—credit inspiration where appropriate.</li>
+            <li>
+              See something off? <a href="/report">Report it</a> or
+              <a href="/contact">contact us</a>.
+            </li>
+          </ul>
+          <p class="tip">
+            <strong>Note:</strong> Using Faceoff means you agree to these rules.
+            For legal details, see our <a href="/terms">Terms</a> and
+            <a href="/privacy">Privacy</a>.
+          </p>
+        </section>
+
+        <nav class="inline-nav" aria-label="Secondary">
+          <a class="link" href="/faq">Read the FAQ</a>
+          <span aria-hidden="true">·</span>
+          <a class="link" href="/contact">Contact</a>
+          <span aria-hidden="true">·</span>
+          <a class="link" href="/report">Report Content</a>
         </nav>
-      </div>
-    </header>
+      </main>
 
-    <main id="content" class="container">
-      <section class="hero" aria-labelledby="page-title">
-        <h1 id="page-title">Rules &amp; Guidelines</h1>
-        <p class="sub">
-          Please read this before uploading or voting. Last updated:
-          <time datetime="2025-09-01">Sept 1, 2025</time>.
-        </p>
-        <div class="actions">
-          <a class="btn primary" href="/vote">Start Voting</a>
-          <a class="btn ghost" href="/upload">Upload Your Design</a>
+      <footer class="site-footer" role="contentinfo">
+        <div class="container footerwrap">
+          <div class="footercol">
+            <h3>Resources</h3>
+            <ul class="footlinks">
+              <li>
+                <a href="/rules" aria-current="page">Rules &amp; Guidelines</a>
+              </li>
+              <li><a href="/faq">FAQ</a></li>
+              <li><a href="/privacy">Privacy Policy</a></li>
+              <li><a href="/terms">Terms of Use</a></li>
+            </ul>
+          </div>
+          <div class="footercol">
+            <h3>Community</h3>
+            <ul class="footlinks">
+              <li><a href="/leaderboard">Leaderboard</a></li>
+              <li><a href="/uploads">Latest Uploads</a></li>
+              <li>
+                <a href="https://instagram.com/" target="_blank" rel="noopener"
+                  >Instagram</a
+                >
+              </li>
+              <li>
+                <a href="https://discord.com/" target="_blank" rel="noopener"
+                  >Discord</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footercol">
+            <h3>About</h3>
+            <p class="copyright">© 2025 Faceoff • Made with ❤️ by Rohan</p>
+          </div>
         </div>
-      </section>
-
-      <section class="card" aria-labelledby="uploading">
-        <h2 id="uploading">✅ Uploading Designs</h2>
-        <ul>
-          <li>Upload only <strong>your own original work</strong>.</li>
-          <li>Accepted formats: <strong>JPG, PNG, SVG</strong>.</li>
-          <li>
-            Content must be appropriate for all audiences (no nudity, hate, or
-            violence).
-          </li>
-          <li>
-            Keep files under the posted size limit and follow category/theme
-            rules.
-          </li>
-        </ul>
-      </section>
-
-      <section class="card" aria-labelledby="not-allowed">
-        <h2 id="not-allowed">🚫 Not Allowed</h2>
-        <ul>
-          <li>Plagiarism, traced, or heavily copied designs.</li>
-          <li>Offensive, discriminatory, or harmful content.</li>
-          <li>Spam uploads or repeated near-duplicates.</li>
-          <li>
-            Watermarks, ads, or promotional banners (unless explicitly
-            permitted).
-          </li>
-        </ul>
-      </section>
-
-      <section class="card" aria-labelledby="voting">
-        <h2 id="voting">📊 Voting Rules</h2>
-        <ul>
-          <li>Vote fairly—pick the design you genuinely prefer.</li>
-          <li>No bots, fake accounts, or vote manipulation.</li>
-          <li>
-            Leaderboards reflect community votes and moderation decisions.
-          </li>
-        </ul>
-      </section>
-
-      <section class="card" aria-labelledby="rights">
-        <h2 id="rights">⚖️ Rights &amp; Responsibility</h2>
-        <ul>
-          <li>You retain ownership of your design.</li>
-          <li>
-            By uploading, you grant Faceoff a non-exclusive license to
-            <strong>display</strong> your design on the site and socials for
-            promotion.
-          </li>
-          <li>
-            Reported content may be reviewed and removed if it breaks rules.
-          </li>
-          <li>
-            Repeat violations may result in temporary or permanent account
-            restrictions.
-          </li>
-        </ul>
-      </section>
-
-      <section class="card" aria-labelledby="etiquette">
-        <h2 id="etiquette">🙌 Community Etiquette</h2>
-        <ul>
-          <li>Be respectful and constructive toward other creators.</li>
-          <li>Celebrate originality—credit inspiration where appropriate.</li>
-          <li>
-            See something off? <a href="/report">Report it</a> or
-            <a href="/contact">contact us</a>.
-          </li>
-        </ul>
-        <p class="tip">
-          <strong>Note:</strong> Using Faceoff means you agree to these rules.
-          For legal details, see our <a href="/terms">Terms</a> and
-          <a href="/privacy">Privacy</a>.
-        </p>
-      </section>
-
-      <nav class="inline-nav" aria-label="Secondary">
-        <a class="link" href="/faq">Read the FAQ</a>
-        <span aria-hidden="true">·</span>
-        <a class="link" href="/contact">Contact</a>
-        <span aria-hidden="true">·</span>
-        <a class="link" href="/report">Report Content</a>
-      </nav>
-    </main>
-
-    <footer class="site-footer" role="contentinfo">
-      <div class="container footerwrap">
-        <div class="footercol">
-          <h3>Resources</h3>
-          <ul class="footlinks">
-            <li>
-              <a href="/rules" aria-current="page">Rules &amp; Guidelines</a>
-            </li>
-            <li><a href="/faq">FAQ</a></li>
-            <li><a href="/privacy">Privacy Policy</a></li>
-            <li><a href="/terms">Terms of Use</a></li>
-          </ul>
-        </div>
-        <div class="footercol">
-          <h3>Community</h3>
-          <ul class="footlinks">
-            <li><a href="/leaderboard">Leaderboard</a></li>
-            <li><a href="/uploads">Latest Uploads</a></li>
-            <li>
-              <a href="https://instagram.com/" target="_blank" rel="noopener"
-                >Instagram</a
-              >
-            </li>
-            <li>
-              <a href="https://discord.com/" target="_blank" rel="noopener"
-                >Discord</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="footercol">
-          <h3>About</h3>
-          <p class="copyright">© 2025 Faceoff • Made with ❤️ by Rohan</p>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
   </body>
 </html>

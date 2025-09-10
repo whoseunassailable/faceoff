@@ -1,27 +1,3 @@
-/* Page basics */
-html,
-body {
-  height: 100%;
-}
-body {
-  background-color: #eae1fe;
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: start;
-  gap: 16px;
-}
-
-.main-page-heading {
-  width: 100%;
-  margin: 16px 0 0;
-  color: #874fff;
-  text-align: center;
-  font-family: Arial, sans-serif;
-}
-
 /* Filters row */
 .filters-container {
   display: flex;
@@ -52,17 +28,15 @@ body {
 /* Scrollable 3-column grid */
 .body-for-designs {
   width: 85%;
-  max-width: 1100px;
+  height: 65%;
   margin: 0 auto 32px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
-  max-height: 360px; /* scroll area height */
   overflow-y: auto;
   padding: 12px;
   border: 4px solid #ff9e42;
   border-radius: 16px;
-  background: #efe7ff;
 }
 
 /* Cards in the grid */

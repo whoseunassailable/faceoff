@@ -4,29 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Recent Uploads</title>
-    <link rel="stylesheet" href="uploads.css" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/uploads.css" />
   </head>
   <body>
-    <h1 class="main-page-heading">Recent Uploads</h1>
+    <div class="empty-container">
+      <div class="topline"></div>
+      <div class="topcurve"></div>
+      <h1 class="main-page-heading">Recent Uploads</h1>
 
-    <div class="filters-container">
-      <select id="category" class="categories-and-filters">
-        <option value="" disabled selected>Filter by Category</option>
-        <option value="illustration">Illustration</option>
-        <option value="3d">3D</option>
-        <option value="typography">Typography</option>
-      </select>
+      <div class="filters-container">
+        <select id="category" class="categories-and-filters">
+          <option value="" disabled selected>Filter by Category</option>
+          <option value="illustration">Illustration</option>
+          <option value="3d">3D</option>
+          <option value="typography">Typography</option>
+        </select>
 
-      <select id="sort" class="categories-and-filters">
-        <option value="" disabled selected>Sort By Votes</option>
-        <option value="high-to-low">High to low</option>
-        <option value="low-to-high">Low to high</option>
-      </select>
+        <select id="sort" class="categories-and-filters">
+          <option value="" disabled selected>Sort By Votes</option>
+          <option value="high-to-low">High to low</option>
+          <option value="low-to-high">Low to high</option>
+        </select>
+      </div>
+      <div class="body-for-designs" id="designs-grid"></div>
+      <custom-footer></custom-footer>
+      <script src="../js/uploads.js"></script>
+      <script src="../js/custom-footer.js"></script>
     </div>
-
-    <!-- Scrollable 3-column grid; JS will inject 6 cards -->
-    <div class="body-for-designs" id="designs-grid"></div>
-
-    <script src="uploads.js"></script>
   </body>
 </html>
