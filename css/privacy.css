@@ -1,0 +1,112 @@
+/* Page-specific styling layered on top of base.css */
+.policy-wrap {
+  flex: 1;
+  padding: 40px 24px 56px;
+  font-family: "Inter", sans-serif;
+  color: #000;
+  display: grid;
+  gap: 16px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.policy-heading {
+  margin: 0% auto;
+  font-family: "Cinzel", serif;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.policy-sub {
+  text-align: center;
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin-bottom: 20px;
+}
+
+.policy-item {
+  border-bottom: 2px solid #8b5e3c;
+  padding: 14px 0;
+}
+
+.policy-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: pointer;
+  gap: 12px;
+}
+
+.policy-icon {
+  transition: transform 0.3s ease;
+  user-select: none;
+}
+
+.policy-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.35s ease,
+    padding 0.35s ease;
+  padding-left: 2px;
+}
+
+.policy-item.active .policy-answer {
+  max-height: 1200px; /* plenty for long copy */
+  padding-top: 10px;
+}
+
+.policy-item.active .policy-icon {
+  transform: rotate(45deg);
+}
+
+.policy-answer p,
+.policy-answer ul {
+  margin: 8px 0 0 0;
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+
+.policy-answer ul {
+  padding-left: 18px;
+}
+
+.toc {
+  margin: 8px 0 18px;
+  padding: 12px 16px;
+  border: 2px solid #8b5e3c;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.toc strong {
+  font-family: "Cinzel", serif;
+}
+
+.toc a {
+  color: #000;
+  text-decoration: none;
+}
+
+.toc a:hover {
+  color: #6e3b2b;
+  text-shadow: 0 0 6px rgba(212, 175, 55, 0.6);
+}
+
+.back-to-top {
+  text-align: right;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+.back-to-top a {
+  color: #000;
+  text-decoration: none;
+}
+
+.back-to-top a:hover {
+  color: #6e3b2b;
+  text-shadow: 0 0 6px rgba(212, 175, 55, 0.6);
+}

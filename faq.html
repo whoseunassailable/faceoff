@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faceoff FAQ</title>
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/faq.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="empty-container">
+      <div class="topline"></div>
+      <div class="topcurve"></div>
+      <h1 class="faq-heading">Frequently Asked Questions</h1>
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is Faceoff?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Faceoff is a creative platform where you can compare, vote, and
+            discover art in a fun Renaissance-inspired style.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How do I participate in a Faceoff?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Simply log in, browse the ongoing faceoffs, and cast your vote for
+            the artwork you like best. You can also submit your own entries!
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Is Faceoff free to use?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Yes! Browsing and voting are free. Some premium features may be
+            introduced in the future, but the core experience will always be
+            accessible.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How can I share my results?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            After participating in a Faceoff, you’ll see share buttons that let
+            you post results directly to social media or copy a link.
+          </div>
+        </div>
+      </div>
+      <custom-footer></custom-footer>
+    </div>
+
+    <script>
+      // Toggle FAQ items
+      document.querySelectorAll(".faq-item").forEach((item) => {
+        item.addEventListener("click", () => {
+          item.classList.toggle("active");
+        });
+      });
+    </script>
+    <script src="../js/custom-footer.js" type="module"></script>
+  </body>
+</html>
