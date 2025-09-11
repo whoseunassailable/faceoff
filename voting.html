@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faceoff • Start Voting</title>
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/voting.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="empty-container">
+      <div class="topline"></div>
+      <div class="topcurve"></div>
+      <h1 class="vote-heading">Choose Your Champion</h1>
+      <div class="round-info">Round 1 of 10 • 120 votes cast</div>
+
+      <div class="vote-container">
+        <div class="vote-grid">
+          <!-- Option A -->
+          <div class="vote-card">
+            <img src="assets/img/artwork1.jpg" alt="Artwork 1" />
+            <h3>“Renaissance Sunrise”</h3>
+            <button class="vote-button">Vote</button>
+          </div>
+
+          <!-- Option B -->
+          <div class="vote-card">
+            <img src="assets/img/artwork2.jpg" alt="Artwork 2" />
+            <h3>“Medieval Shadows”</h3>
+            <button class="vote-button">Vote</button>
+          </div>
+        </div>
+      </div>
+      <custom-footer></custom-footer>
+    </div>
+    <script src="../js/custom-footer.js" type="module"></script>
+  </body>
+</html>

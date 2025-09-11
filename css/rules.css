@@ -45,12 +45,6 @@ h2 {
   word-wrap: break-word;
 }
 
-/* Main page heading already styled in base.css; add spacing here */
-.main-page-heading {
-  padding: 28px 16px 14px;
-  letter-spacing: 0.5px;
-}
-
 /* ---------- Page Layout ---------- */
 #content.container {
   width: 100%;
